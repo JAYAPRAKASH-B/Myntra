@@ -1,8 +1,8 @@
-import { } from "react-bootstrap"
+import { React } from "react"
 import { Typography } from '@material-ui/core'
-import { Container, Row, Col } from 'react-bootstrap'
-import './/../DealsOfTheDay/Deals.css'
+import { Row, Col } from 'react-bootstrap'
 import '../Global.css'
+import './/../DealsOfTheDay/Deals.css'
 import img1 from '../../../../assets/Deals/1.webp'
 import img2 from '../../../../assets/Deals/2.webp'
 import img3 from '../../../../assets/Deals/3.webp'
