@@ -93,12 +93,8 @@ export default function Header() {
 
   const menuId = "primary-search-account-menu";
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  function handleClose() {
-    setAnchorEl(null);
-  }
+  const mobileMenuId = "primary-search-account-menu-mobile";
 
   return (
     <div className={classes.grow}>
