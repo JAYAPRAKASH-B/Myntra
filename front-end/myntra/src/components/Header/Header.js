@@ -6,19 +6,14 @@ import {
   IconButton,
   Typography,
   InputBase,
-  Badge,
-
-
-  MenuItem,
-  Menu
-
+  Badge
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import MoreIcon from "@material-ui/icons/MoreVert";
-import "./Header.css";
+import "./Header.scss";
 import myntra_logo from "../../assets/Myntra_logo.png";
 import { Link } from "react-router-dom";
 
@@ -92,104 +87,395 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
-  const classes = useStyles();
+  const classNamees = useStyles();
 
   const menuId = "primary-search-account-menu";
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  function handleClose() {
-    setAnchorEl(null);
-  }
+  const mobileMenuId = 'primary-search-account-menu-mobile';
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="static" style={{ backgroundColor: "#fff", paddingTop: "18px", paddingBottom: "18px" }}>
-        <Toolbar>
-          <img src={myntra_logo} alt="Myntra" style={{ width: "6%", paddingLeft: "30px" }}></img>
+    <div>
+      <nav role="navigation">
+        <a href="javascript:void(0);" className="ic close"></a>
+        <ul className="main-nav">
+          <img src={myntra_logo} alt="Myntra" style={{width: '7%', paddingLeft: '45px'}}/>
+          <li className="top-level-link">
+            <a className="mega-menu"><Typography className="{classNamees.title} navtitle" variant="h6" noWrap>MENS</Typography></a>
+            <div className="sub-menu-block">
+              <div className="row">
+                <div className="col-md-1 col-lg-1 col-sm-1"></div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Clothing</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>New Born</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Handbags</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Wallets</a></li>
+                    <li><a>Athletic bag</a></li>
+                    <li><a>Backpack</a></li>
+                    <li><a>Bucket Bag</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-1 col-lg-1 col-sm-1"></div>
+              </div>
 
-          <Typography className="{classes.title}, navtitle" variant="h6" noWrap>
-            MENS
-          </Typography>
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-            MenuListProps={{ onMouseLeave: handleClose }}
-            style={{ position: 'fixed', marginTop: '5%' }}
-          >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu>
-          <Typography className="{classes.title}, navtitle" variant="h6" noWrap>
-            WOMENS
-          </Typography>
-          <Typography className="{classes.title}, navtitle" variant="h6" noWrap>
-            KIDS
-          </Typography>
-          <Typography className="{classes.title}, navtitle" variant="h6" noWrap>
-            HOME & LIVING
-          </Typography>
-          <Typography className="{classes.title}, navtitle" variant="h6" noWrap>
-            BEAUTY
-          </Typography>
-          <Typography className="{classes.title}, navtitle" variant="h6" noWrap>
-            STUDIO
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon style={{ color: "#282c3f" }} />
+              <div className="row banners-area">
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+              </div>
+
             </div>
-            <InputBase
-              style={{ color: "#696e79", width: "100%" }}
-              placeholder="Search for products, brands and more"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
-          </div>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="grey">
-              <Badge badgeContent={4} color="primary">
-                <LocalMallOutlinedIcon fontSize='large' />
+          </li>
+          <li className="top-level-link">
+            <a className="mega-menu"><Typography className="{classNamees.title} navtitle" variant="h6" noWrap>WOMENS</Typography></a>
+            <div className="sub-menu-block">
+              <div className="row">
+                <div className="col-md-1 col-lg-1 col-sm-1"></div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Clothing</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>New Born</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Handbags</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Wallets</a></li>
+                    <li><a>Athletic bag</a></li>
+                    <li><a>Backpack</a></li>
+                    <li><a>Bucket Bag</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-1 col-lg-1 col-sm-1"></div>
+              </div>
 
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="grey">
-              <Badge badgeContent={17} color="secondary">
-                <FavoriteBorderOutlinedIcon fontSize="large" />
-              </Badge>
-            </IconButton>
-            <Link to='/signup'>
-              <IconButton
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                color="grey"
-              >
-                <AccountCircle fontSize="large" />
-              </IconButton>
-            </Link>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
+              <div className="row banners-area">
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+              </div>
 
+            </div>
+          </li>
+          <li className="top-level-link">
+            <a className="mega-menu"><Typography className="{classNamees.title} navtitle" variant="h6" noWrap>KIDS</Typography></a>
+            <div className="sub-menu-block">
+              <div className="row">
+                <div className="col-md-1 col-lg-1 col-sm-1"></div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Clothing</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>New Born</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Handbags</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Wallets</a></li>
+                    <li><a>Athletic bag</a></li>
+                    <li><a>Backpack</a></li>
+                    <li><a>Bucket Bag</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-1 col-lg-1 col-sm-1"></div>
+              </div>
+
+              <div className="row banners-area">
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li className="top-level-link">
+            <a className="mega-menu"><Typography className="{classNamees.title} navtitle" variant="h6" noWrap>HOME&LIVING</Typography></a>
+            <div className="sub-menu-block">
+              <div className="row">
+                <div className="col-md-1 col-lg-1 col-sm-1"></div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Clothing</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>New Born</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Handbags</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Wallets</a></li>
+                    <li><a>Athletic bag</a></li>
+                    <li><a>Backpack</a></li>
+                    <li><a>Bucket Bag</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-1 col-lg-1 col-sm-1"></div>
+              </div>
+
+              <div className="row banners-area">
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li className="top-level-link">
+            <a className="mega-menu"><Typography className="{classNamees.title} navtitle" variant="h6" noWrap>BEAUTY</Typography></a>
+            <div className="sub-menu-block">
+              <div className="row">
+                <div className="col-md-1 col-lg-1 col-sm-1"></div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Clothing</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>New Born</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Handbags</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Wallets</a></li>
+                    <li><a>Athletic bag</a></li>
+                    <li><a>Backpack</a></li>
+                    <li><a>Bucket Bag</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-2 col-lg-2 col-sm-2">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-1 col-lg-1 col-sm-1"></div>
+              </div>
+
+              <div className="row banners-area">
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li className="top-level-link">
+            <a className="mega-menu"><Typography className="{classNamees.title} navtitle" variant="h6" noWrap>STUDIO</Typography></a>
+            <div className="sub-menu-block">
+              <div className="row">
+                <div className="col-md-4 col-lg-4 col-sm-4">
+                  <h2 className="sub-menu-head">Clothing</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>New Born</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-4 col-lg-4 col-sm-4">
+                  <h2 className="sub-menu-head">Handbags</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Wallets</a></li>
+                    <li><a>Athletic bag</a></li>
+                    <li><a>Backpack</a></li>
+                    <li><a>Bucket Bag</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+                <div className="col-md-4 col-lg-4 col-sm-4">
+                  <h2 className="sub-menu-head">Shoes</h2>
+                  <ul className="sub-menu-lists">
+                    <li><a>Mens</a></li>
+                    <li><a>Womens</a></li>
+                    <li><a>Kids</a></li>
+                    <li><a>View All</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="row banners-area">
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+                <div className="col-md-6 col-lg-6 col-sm-6">
+                  <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }
