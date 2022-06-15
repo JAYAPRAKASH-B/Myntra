@@ -71,8 +71,8 @@ const useStyles = makeStyles((theme) => ({
   loginContainer: {
     padding: "80px 10% 0",
     backgroundColor: "#fff",
-    minHeight: "80vh",
-    maxHeight: "80vh",
+    minHeight: "70vh",
+    
   },
   primaryBtn: {
     color: "#fff",
