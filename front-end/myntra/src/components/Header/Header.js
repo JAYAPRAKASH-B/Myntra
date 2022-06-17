@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
-  const classNamees = useStyles();
+  const classes = useStyles();
 
   const menuId = "primary-search-account-menu";
 
@@ -98,7 +98,7 @@ export default function Header() {
       <nav role="navigation">
         <a href="javascript:void(0);" className="ic close"></a>
         <ul className="main-nav">
-          <img src={myntra_logo} alt="Myntra" style={{width: '7%', paddingLeft: '45px'}}/>
+          <img src={myntra_logo} alt="Myntra" style={{ width: '7%', paddingLeft: '45px' }} />
           <li className="top-level-link">
             <a className="mega-menu"><Typography className="{classNamees.title} navtitle" variant="h6" noWrap>MENS</Typography></a>
             <div className="sub-menu-block">
@@ -472,6 +472,57 @@ export default function Header() {
                   <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
                 </div>
               </div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <InputBase
+                style={{ color: "#696e79", width: "100%" }}
+                placeholder="Search for products, brands and more"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ "aria-label": "search" }}
+              />
+            </div>
+          </li>
+          <li>
+            <div className={classes.sectionDesktop}>
+              <IconButton aria-label="show 4 new mails" color="grey">
+                <Badge badgeContent={4} color="primary">
+                  <LocalMallOutlinedIcon fontSize='large' />
+
+                </Badge>
+              </IconButton>
+              <IconButton aria-label="show 17 new notifications" color="grey">
+                <Badge badgeContent={17} color="secondary">
+                  <FavoriteBorderOutlinedIcon fontSize="large" />
+                </Badge>
+              </IconButton>
+              <Link to='/signup'>
+                <IconButton
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  color="grey"
+                >
+                  <AccountCircle fontSize="large" />
+                </IconButton>
+              </Link>
+            </div>
+          </li>
+          <li>
+            <div className={classes.sectionMobile}>
+              <IconButton
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                color="inherit"
+              >
+                <MoreIcon />
+              </IconButton>
             </div>
           </li>
         </ul>

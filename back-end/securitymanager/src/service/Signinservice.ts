@@ -58,7 +58,7 @@ export class Signinservice {
         otp = parseInt(`${otp}`);
         let mailOPtions = {
             to: email,
-            subject: 'Otp for registration is: ',
+            subject: 'Otp for Myntra registration ',
             html: "<h3>OTP for account verification is </h3>" + "<h1 style='font-weight:bold;'>" + otp + "</h1>"
         }
         transporter.sendMail(mailOPtions, (error, info) => {
